@@ -1,0 +1,8 @@
+{
+  "short_name": "Mapa do Bairro",
+  "name": "Bares próximos a Jardim Bela Vista",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,154 @@
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,p{
+  font-family: 'Rasa', serif;
+}
+
+p{
+  font-size: 1em
+}
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
+#map {
+  height: 100vh;
+  width: 100%;
+  bottom:0px;
+}
+header{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background-color: #BAADB4;
+  border-bottom: solid 2px #000
+}
+.titulo {
+  text-align: center;
+  position: relative;
+  font-family: 'Francois One', sans-serif;
+  margin: 0 auto;
+}
+.bm-burger-button {
+  position: fixed;
+  margin: 0 auto;
+}
+.bm-burger-bars {
+  background: #000;
+}
+
+.bm-burger-bars-hover {
+  background: #FFF;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  background: #BAADB4;
+  border-right: solid 2px #000
+}
+input{
+  width: 80%;
+  position: relative;
+  border: solid 2px #000;
+  font-family: 'Francois One', sans-serif;
+  font-size: 1em
+}
+.venue-list-item{
+  display: block;
+  text-decoration: none;
+  font-family: 'Rasa', serif;;
+}
+.venue-list-item:hover{
+  color: #FFF;
+  cursor: pointer;
+}
+
+@media screen and (max-width:480px){
+  header {
+    height: 2.5em;
+  }
+
+  .titulo {
+    font-size: 1.2em;
+    top:0.2em
+  }
+  .bm-burger-button {
+    width: 5%;
+    height: 1em;
+    left: 5%;
+    top:0.8em;
+  }
+
+  input{
+    height: 2.3em;
+    top:10px;
+    left: 25px;
+  }
+  .venue-list-item{
+    margin-bottom: 0.5em;
+  }
+}
+
+@media screen and (min-width:481px)and (max-width:979px){
+  header {
+    height: 4.5em;
+  }
+  .titulo {
+    font-size: 2.5em;
+    top:0.1em
+  }
+  .bm-burger-button {
+    width: 5%;
+    height: 2.5em;
+    left: 5%;
+    top:1.2em;
+  }
+  input{
+    height: 3em;
+    top: 10px;
+    left:25px
+  }
+  .venue-list-item{
+    margin-bottom: 0.8em;
+  }
+}
+
+@media screen and (min-width:980px){
+  header {
+    height: 4em;
+  }
+  .titulo {
+    font-size: 2.5em;
+    
+  }
+  .bm-burger-button {
+    width: 5%;
+    height: 2.5em;
+    left: 5%;
+    top: 0.7em
+  }
+  input{
+    height: 3em;
+    left: 30px;
+    top: 10px;
+  }
+  .venue-list-item{
+    margin-top: 0.5em;
+  }
+}
+
+
+
