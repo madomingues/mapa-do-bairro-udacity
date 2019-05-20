@@ -40,7 +40,8 @@ class App extends Component {
         },this.loadMap())
       })
       .catch(error =>{
-        console.log('ERROR' + error)
+        console.log('ERROR' + error);
+        window.alert('Desculpe, não foi possível acessar os dados do foursquare')
       });
   };
   
@@ -117,7 +118,8 @@ class App extends Component {
       const positionVenue = {lat:v.venue.location.lat,lng:v.venue.location.lng}
       const addressVenue = v.venue.location.address
 
-      const info = `<h1>${nameVenue}</h1><p>${addressVenue}</p>`
+      const info = `<h1>${nameVenue}</h1><h4>${addressVenue}</h4>
+                    <p> Informações obtidas no Foursquare</p>`
 
       //Custom the marker 
       function makeMarkerIcon(markerColor) {
@@ -158,10 +160,12 @@ class App extends Component {
       //each marker change the color when mouse over 
       marker.addListener('mouseover', function() {
         this.setIcon(highIcon);
+        this.setAnimation(window.google.maps.Animation.BOUNCE)
       })
 
       marker.addListener('mouseout', function() {
         this.setIcon(defaultIcon);
+        this.setAnimation(null)
       })
     })
   }
@@ -185,11 +189,14 @@ class App extends Component {
 }
 
 function loadScript(url){
-  var index  = window.document.getElementsByTagName("script")[0]
-  var script = window.document.createElement("script")
+  const index  = window.document.getElementsByTagName("script")[0]
+  const script = window.document.createElement("script")
   script.src = url
   script.async = true
   script.defer = true
+  script.onerror = function(){
+    alert('Não foi possível carregar os dados do google maps')
+  }
   index.parentNode.insertBefore(script, index)
 };
 
