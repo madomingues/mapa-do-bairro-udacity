@@ -147,25 +147,32 @@ class App extends Component {
 
       this.state.markers.push(marker)
 
+      //marker animation click function
+      function animation(){
+        marker.setAnimation(window.google.maps.Animation.BOUNCE);
+        setTimeout(function(){
+          marker.setAnimation(null)
+        },2000)
+      }
+
       //each marker has an infowindow that open when the marker is clicked
       function openMarkers(){
         infoWindow.setContent(info);
+        animation();
         infoWindow.open(map,marker)
       }
 
       marker.addListener('click', function(){
-        openMarkers()
+        openMarkers();
       })
 
       //each marker change the color when mouse over 
       marker.addListener('mouseover', function() {
         this.setIcon(highIcon);
-        this.setAnimation(window.google.maps.Animation.BOUNCE)
       })
 
       marker.addListener('mouseout', function() {
         this.setIcon(defaultIcon);
-        this.setAnimation(null)
       })
     })
   }
